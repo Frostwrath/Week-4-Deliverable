@@ -1,5 +1,6 @@
 # Overview
-This site is intended to serve as a learning aid to help memorize some key concepts within web development
+This site is intended to serve as a learning aid to help memorize some key concepts within web development.
+
 The site has a series of 5 questions, with a leaderboard based on the time remaining at the completion of the quiz.
 
 
