@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code Quiz</title>
+  <link rel="stylesheet" type="text/css" href="./assets/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/styles.css" />
+</head>
+
+<body>
+    <div class="highscoreTime">
+        <p class="viewHighscore"><a href="#">View Highscores</a></p>
+        <p class="timerLabel">Time:</p>
+        <p class="time">0</p>
+    </div>
+    <section class="quiz">
+        <h1 class="question">Coding Quiz Challenge</h1>
+        <p id="briefing">Try to answer the following the following code-related questions within the time limit. Keep in mind that incorrect answers will penalise your score/time by ten seconds! </p>
+        <button id="quizStart">Start Quiz</button>
+        <div id="answers">
+            <button class="q1"></button>
+            <button class="q2"></button>
+            <button class="q3"></button>
+            <button class="q4"></button>
+        </div>
+        <div class="result">
+            <hr>
+            <p id="correct">Correct!</p>
+            <p id="incorrect">Incorrect!</p>
+        </div>
+        <div class="quizEnd">
+            <h1>All Done!</h1>
+            <div class="resultsArea">
+                <p>Your final time was:</p>
+                <p class="finalTime"></p>
+            </div>
+            <p class="initials">Enter Initials:</p>
+            <textarea></textarea>
+            <button class="lbSubmit">Submit</button>
+        </div>
+        <div class="leaderboard">
+            <h1>Leaderboard</h1>
+            <ol></ol>
+        </div>
+    </section>
+    <script src="assets/script.js"></script>
+</body>
