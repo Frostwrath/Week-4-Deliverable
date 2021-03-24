@@ -9,6 +9,7 @@ var q3 = document.querySelector(".q3")
 var q4 = document.querySelector(".q4")
 var questions= ["What is the difference between HTML and CSS?", "Arrays in Javascript can be used to store ____.", "A very useful tool used during development and debugging for printing content to the debugger is:","Which of these tags would display the largest text?","String values must be enclosed within ____ when being assigned to variables.",];
 var questionNumber;
+var isComplete = false;
 
 //arrays of possible answers and the answers
 var quiz = [["HTML gives a webpage structure. CSS provides styling.", "CSS is one type of HTML.", "CSS structures a webpage. HTML strictly provides styling.","There is no difference."],["Numbers and strings","Other arrays","Booleans","All of the above"],["Javascript","Terminal/Bash","For loops", "console.log"],["<p>","<h2>","<h6>","<h4>"],["Commas","Parentheses","Curly Brackets","Quotes"]];
@@ -36,12 +37,16 @@ function compareQ1(){
     questionNumber += 1;
     questionAsk();
   }
-  else
+  if (q1.textContent !== answers[questionNumber])
   {
     document.getElementById('incorrect').style.display = "block";
     timerCount -= 10;
     questionNumber += 1;
     questionAsk();
+  }
+  if (questionNumber == 5)
+  {
+    isComplete = true
   }
 }
 
@@ -54,12 +59,16 @@ function compareQ2(){
     questionNumber += 1;
     questionAsk();
   }
-  else
+  if (q2.textContent !== answers[questionNumber])
   {
     document.getElementById('incorrect').style.display = "block";
     timerCount -= 10;
     questionNumber += 1;
     questionAsk();
+  }
+  if (questionNumber == 5)
+  {
+    isComplete = true
   }
 }
 
@@ -72,12 +81,16 @@ function compareQ3(){
     questionNumber += 1;
     questionAsk();
   }
-    else
+  if (q3.textContent !== answers[questionNumber])
   {
     document.getElementById('incorrect').style.display = "block";
     timerCount -= 10; 
     questionNumber += 1;
     questionAsk();
+  }
+  if (questionNumber == 5)
+  {
+    isComplete = true
   }
 }
 
@@ -90,20 +103,30 @@ function compareQ4(){
     questionNumber += 1;
     questionAsk();
   }
-  else
+  if (q4.textContent !== answers[questionNumber])
   {
     document.getElementById('incorrect').style.display = "block";
     timerCount = timecount-10;
     questionNumber += 1;
     questionAsk();
   }
+  if (questionNumber==5)
+  {
+    isComplete = true
+  }
 }
 
+function endQuiz(){
+  if (isComplete == true)
+  {
+    document.getElementById('quiz').style.display = "none";
+    document.getElementById('quizEnd').style.display = "block";
+  }
+}
 
 function quizStart(){
     timerCount = 75;
     startTimer();
-    console.log(timer);
     document.getElementById('briefing').style.display = "none";
     document.getElementById('quizStart').style.display = "none";
     document.getElementById('answers').style.display = "block";
@@ -118,13 +141,18 @@ function startTimer() {
       timerElement.textContent = timerCount;
       if (timerCount >= 0) {
         if (isComplete && timerCount > 0) {
+          score = timerCount
           clearInterval(timer);
-          endQuiz;
+          endQuiz();
+          document.getElementById('quiz').style.display = "none";
+          document.getElementById('quizEnd').style.display = "block";
         }
       }
       if (timerCount === 0) {
         clearInterval(timer);
         endQuiz();
+        document.getElementById('answers').style.display = "none";
+        document.getElementById('quizEnd').style.display = "block";
       }
     }, 1000);
   }
