@@ -10,7 +10,7 @@ Script issue within the question allocation, leading to the questions being skip
 Quiz End not detected in case of Quiz completion
 
 Leaderboard non-functional, pending fix on questions issue 
-
-
+### Example of Site Visuals
+![Example of Site Visual](https://i.imgur.com/suRrIoH.png)
 ## Live Site Link
 The site is live at https://frostwrath.github.io/Week-4-Deliverable/
